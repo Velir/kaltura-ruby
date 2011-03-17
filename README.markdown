@@ -46,6 +46,24 @@ Usage
     #video = File.open("/home/papyromancer/ovb.ogv")
     #client.media_service.upload(video)
 
+Tests
+-----
+	  If you want to run tests you need the gems.
+	  	sudo gem install jeweler
+		sudo gem install spicycode-rcov
+		sudo gem install shoulda
+
+		Set up yaml file:
+		copy the config/server.yml.template to  config/server.yml and enter your kaltura config information
+
+		Execute the tests:
+		rake test
+
+		You should see the following results:
+		3 tests, 2 assertions, 0 failures, 0 errors, 0 skips
+
+		Venturit team is in the process of adding more tests. Should be available soon.
+
 Copyright
 ---------
 

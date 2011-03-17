@@ -220,9 +220,14 @@ module Kaltura
 		attr_accessor :client_tag
 		attr_accessor :timeout
 		attr_accessor :partner_id
+	  
+    #
+    # Adding service_url to the initialize signature to pass url to your own kaltura ce instance
+    # Default is still set to http://www.kaltura.com.
+    # 
 	
-		def initialize(partner_id = -1)
-			@service_url 	= "http://www.kaltura.com"
+		def initialize(service_url="http://www.kaltura.com",partner_id = -1)
+			@service_url 	= service_url
 			@format 		= 2 # xml
 			@client_tag 	= "ruby"
 			@timeout 		= 10

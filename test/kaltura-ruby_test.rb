@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class KalturaRubyTest < Test::Unit::TestCase
-  should "probably rename this file and start testing for real" do
-    flunk "hey buddy, you should probably rename this file and start testing for real"
-  end
+  
+  # simple test to check client session is present
+  should "client should not be nil" do
+         assert_not_nil @client.ks
+ 	end
+
 end

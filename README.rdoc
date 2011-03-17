@@ -29,10 +29,11 @@ In a rails application:
     subpartner_id = your_subpartner_id
     administrator_secret = your_administrator_secret
     user_secret = your_user_secret
+	service_url = custom_kce_service_url # url to your own kaltura ce instance.
     
-    config = Kaltura::Configuration.new( partner_id )
+    config = Kaltura::Configuration.new( service_url, partner_id )
     client = Kaltura::Client.new( config )
-    session = client.session_service.start( admin_secret, '', Kaltura::Constants::SessionType::ADMIN )
+    session = client.session_service.start( administrator_secret, '', Kaltura::Constants::SessionType::ADMIN )
     client.ks = session
     
     filter = Kaltura::Filter::BaseFilter.new
@@ -41,10 +42,25 @@ In a rails application:
     media = client.media_service.list(filter, pager)
     puts "\nmedia:"
     puts media.to_yaml
-    
-    #video = File.open("/home/papyromancer/ovb.ogv")
-    #client.media_service.upload(video)
 
+
+= Tests
+  If your running tests you need the following dependencies.
+  	sudo gem install jeweler
+	sudo gem install spicycode-rcov
+	sudo gem install shoulda
+
+	Set up yaml file:
+	copy the config/server.yml.template to  config/server.yml and enter your kaltura information
+	
+	Execute the tests:
+	rake test
+	
+	You should see the following results:
+	3 tests, 2 assertions, 0 failures, 0 errors, 0 skips
+
+	Venturit team is in the process of adding more tests. Should be available soon.
+	
 == Copyright
 
 The original Ruby client library for Kaltura may be found at http://www.kaltura.org/project/kcl_ruby .  This implementation of the library as a gem attempts to track the Kaltura svn as closely as possible while adding relevant documentation.

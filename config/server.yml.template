@@ -1,0 +1,9 @@
+# kaltura test server config info
+test:
+    login_email: kmc_user@gmail.com
+    login_password: kmc_password
+    partner_id: 101
+    subpartner_id: 10100
+    administrator_secret: 3b190fa29280c777689a4884d6f03d91
+    user_secret: 1522a7d117a690afbab20a3142187343'
+    service_url: http://your.kalturace.com/

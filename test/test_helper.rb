@@ -23,7 +23,7 @@ class Test::Unit::TestCase
     user_secret = config["test"]["user_secret"]
     service_url = config["test"]["service_url"]
 
-    config = Kaltura::Configuration.new(service_url, partner_id )
+    config = Kaltura::Configuration.new(partner_id, service_url)
     @client = Kaltura::Client.new( config )
     session = @client.session_service.start( administrator_secret, '', Kaltura::Constants::SessionType::ADMIN )
     @client.ks = session

@@ -1525,7 +1525,7 @@ module Kaltura
 
 	end
 
-    class Client < ClientBase
+  class Client < ClientBase
 		attr_reader :access_control_service
 		def access_control_service
 			if (@access_control_service == nil)

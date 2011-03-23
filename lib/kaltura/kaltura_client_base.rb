@@ -226,7 +226,7 @@ module Kaltura
     # Default is still set to http://www.kaltura.com.
     # 
 	
-		def initialize(service_url="http://www.kaltura.com",partner_id = -1)
+		def initialize(partner_id = -1,service_url="http://www.kaltura.com")
 			@service_url 	= service_url
 			@format 		= 2 # xml
 			@client_tag 	= "ruby"

@@ -1070,7 +1070,7 @@ module Kaltura
 		end
 	end
 
-	class User < ObjectBase
+	class KUser < ObjectBase
 		attr_accessor :id
 		attr_accessor :partner_id
 		attr_accessor :screen_name

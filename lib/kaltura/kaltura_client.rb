@@ -1120,7 +1120,7 @@ module Kaltura
 		end
 	end
 
-	class Widget < ObjectBase
+	class KWidget < ObjectBase
 		attr_accessor :id
 		attr_accessor :source_widget_id
 		attr_accessor :root_widget_id

@@ -1,23 +1,15 @@
-require "kaltura_client.rb"
+require_relative "../lib/kaltura"
 
-include Kaltura
-conf = KalturaConfiguration.new(250, 25000)
-user = KalturaSessionUser.new(2)
-cl = KalturaClient.new(conf)
-secert = 'dae1be648b8a86d25adafdac2d32e8c3'
-cl.start(user, secert)
+partner_id   = 'xxx'
+admin_secret = 'xxx'
 
-kshow = KalturaKShow.new()
-kshow.name = "test ruby"
-kshow.description = "desc ruby"
+# Create a client and start a Kaltura Session (ks)
+client = Kaltura::Client.new(Kaltura::Configuration.new(partner_id))
+client.ks = client.session_service.start(admin_secret, '', Kaltura::Constants::SessionType::ADMIN)
 
-result = cl.addKShow(user, kshow, 1)
-
-print (result['result']['kshow']['name'])
-
-print("\n")
-print("\n")
-
-result = cl.search(user, KalturaEntryMediaType::VIDEO, KalturaEntryMediaSource::MYSPACE, "funny");
-
-print (result['result'])
+# Create an entry and add content via url
+entry = Kaltura::MediaEntry.new
+entry.name = "Testing Ruby Client"
+entry.media_type = Kaltura::Constants::Media::Type::VIDEO
+url = 'https://github.com/kaltura/KalturaGeneratedAPIClientsCsharp/blob/master/KalturaClientTester/DemoVideo.flv';
+entry = client.media_service.add_from_url(entry, url);

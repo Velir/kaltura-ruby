@@ -85,7 +85,7 @@ module Kaltura
 		attr_accessor :conversion_profile_id
     attr_accessor :root_entry_id
     attr_accessor :operation_attributes
-		
+
 
 		def partner_id=(val)
 			@partner_id = val.to_i
@@ -138,31 +138,31 @@ module Kaltura
 		def categories_ids=(val)
 		  @categories_ids = val.to_i
 	  end
-	  
+
 	  def reference_at=(val)
       @reference_id = val.to_i
     end
-    
+
     def replacing_entry_id=(val)
       @replacing_entry_id = val.to_i
     end
-    
+
     def replaced_entry_id=(val)
       @replaced_entry_id = val.to_i
     end
-    
+
     def replacement_status=(val)
       @replacement_status = val.to_i
     end
-    
+
     def partner_sort_value=(val)
       @partner_sort_value = val.to_i
     end
-    
+
     def conversion_profile_id=(val)
       @conversion_profile_id = val.to_i
     end
-	  
+
     def root_entry_id=(val)
       @root_entry_id = val.to_i
     end
@@ -480,6 +480,15 @@ module Kaltura
 		attr_accessor :media_date
 		attr_accessor :data_url
 		attr_accessor :flavor_params_ids
+		attr_accessor :is_trim_disabled
+		attr_accessor :last_played_at
+		attr_accessor :creator_id
+		attr_accessor :redirect_entry_id
+		attr_accessor :parent_entry_id
+		attr_accessor :entitled_users_edit
+		attr_accessor :entitled_users_publish
+		attr_accessor :capabilities
+		attr_accessor :related_objects
 
 		def media_type=(val)
 			@media_type = val.to_i
@@ -492,6 +501,27 @@ module Kaltura
 		end
 		def media_date=(val)
 			@media_date = val.to_i
+		end
+		def is_trim_disabled=(val)
+			@is_trim_disabled = to_b(val)
+		end
+		def last_played_at=(val)
+			@last_played_at = val.to_i
+		end
+		def creator_id=(val)
+			@creator_id = val.to_i
+		end
+		def redirect_entry_id=(val)
+			@redirect_entry_id = val.to_i
+		end
+		def parent_entry_id=(val)
+			@parent_entry_id = val.to_i
+		end
+		def entitled_users_edit=(val)
+			@entitled_users_edit = to_b(val)
+		end
+		def entitled_users_publish=(val)
+			@entitled_users_publish = to_b(val)
 		end
 	end
 

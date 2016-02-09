@@ -85,7 +85,7 @@ module Kaltura
 		attr_accessor :conversion_profile_id
     attr_accessor :root_entry_id
     attr_accessor :operation_attributes
-		
+
 
 		def partner_id=(val)
 			@partner_id = val.to_i
@@ -138,31 +138,31 @@ module Kaltura
 		def categories_ids=(val)
 		  @categories_ids = val.to_i
 	  end
-	  
+
 	  def reference_at=(val)
       @reference_id = val.to_i
     end
-    
+
     def replacing_entry_id=(val)
       @replacing_entry_id = val.to_i
     end
-    
+
     def replaced_entry_id=(val)
       @replaced_entry_id = val.to_i
     end
-    
+
     def replacement_status=(val)
       @replacement_status = val.to_i
     end
-    
+
     def partner_sort_value=(val)
       @partner_sort_value = val.to_i
     end
-    
+
     def conversion_profile_id=(val)
       @conversion_profile_id = val.to_i
     end
-	  
+
     def root_entry_id=(val)
       @root_entry_id = val.to_i
     end
